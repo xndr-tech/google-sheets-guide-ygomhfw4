@@ -3,29 +3,656 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Sheets Guide - Master Google Sheets Formulas & Tutorials</title>
-    <meta name="description" content="Unlock the full potential of Google Sheets with our extensive guide. Learn formulas, functions, and advanced techniques. Explore templates and interactive tools to simplify your data analysis and boost productivity.">
-    <meta name="keywords" content="Google Sheets tutorial, Google Sheets formulas, learn Google Sheets, Google Sheets templates, REGEX Google Sheets, Google Sheets automation, data analysis, spreadsheet guide">
+    <title>Google Sheets Guide - Master Formulas, Tutorials & Templates</title>
+    <meta name="description" content="Unlock the full potential of Google Sheets with our extensive guide, interactive formula generator, and regex helper. Master formulas, tips, and templates effortlessly.">
+    <meta name="keywords" content="Google Sheets formulas, Google Sheets tutorial, spreadsheet tips, Google Sheets templates, VLOOKUP, INDEX MATCH, conditional sum, REGEXMATCH, REGEXEXTRACT, Google Sheets guide, data analysis">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Google Sheets Guide - Master Formulas & Tutorials">
-    <meta property="og:description" content="Unlock the full potential of Google Sheets with our extensive guide. Learn formulas, functions, and advanced techniques. Explore templates and interactive tools to simplify your data analysis and boost productivity.">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sheetsguide.example.com">
-    <meta property="og:image" content="https://sheetsguide.example.com/assets/img/sheets-guide-og.jpg">
+    <meta property="og:url" content="https://example.com/google-sheets-guide">
+    <meta property="og:title" content="Google Sheets Guide - Master Formulas, Tutorials & Templates">
+    <meta property="og:description" content="Unlock the full potential of Google Sheets with our extensive guide, interactive formula generator, and regex helper. Master formulas, tips, and templates effortlessly.">
+    <meta property="og:image" content="https://example.com/images/google-sheets-guide-og.jpg">
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Google Sheets Guide - Master Formulas & Tutorials">
-    <meta name="twitter:description" content="Unlock the full potential of Google Sheets with our extensive guide. Learn formulas, functions, and advanced techniques. Explore templates and interactive tools to simplify your data analysis and boost productivity.">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/google-sheets-guide">
+    <meta property="twitter:title" content="Google Sheets Guide - Master Formulas, Tutorials & Templates">
+    <meta property="twitter:description" content="Unlock the full potential of Google Sheets with our extensive guide, interactive formula generator, and regex helper. Master formulas, tips, and templates effortlessly.">
+    <meta property="twitter:image" content="https://example.com/images/google-sheets-guide-twitter.jpg">
 
-    <link rel="canonical" href="https://sheetsguide.example.com">
+    <link rel="canonical" href="https://example.com/google-sheets-guide">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
 
-    <!-- Favicon - Inline SVG -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F9D58'/%3E%3C/svg%3E">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Google Sheets Guide",
+      "url": "https://example.com/google-sheets-guide",
+      "description": "An extensive guide with interactive tools to master Google Sheets formulas, regex, and productivity tips.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://example.com/google-sheets-guide/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+        :root {
+            --primary: #8ecfad;
+            --secondary: #f0f7f4;
+            --accent: #5ba380;
+            --dark-text: #333;
+            --light-text: #f0f7f4;
+            --background: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --transition-speed: 0.3s ease;
+            --max-width: 1200px;
+            --padding-desktop: 80px;
+            --padding-mobile: 40px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 3.2em; }
+        h2 { font-size: 2.5em; }
+        h3 { font-size: 1.8em; }
+        h4 { font-size: 1.4em; }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1.1em;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary);
+        }
+
+        button, .button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--light-text);
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+            box-shadow: var(--shadow-light);
+            text-align: center;
+        }
+
+        button:hover, .button:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1em;
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(142, 207, 173, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Layout & Component Specific Styles */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--padding-mobile);
+        }
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--padding-desktop);
+            }
+        }
+
+        header {
+            background-color: var(--background);
+            box-shadow: var(--shadow-light);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-list a {
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: var(--padding-desktop) 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--light-text);
+            padding: var(--padding-desktop) 0;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5em;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 2em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+
+        .section-subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            background-color: var(--background);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            text-align: left;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        .feature-item h3 {
+            color: var(--primary);
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+        .feature-item p {
+            font-size: 1em;
+            color: #555;
+        }
+        .feature-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .tool-card {
+            background-color: var(--background);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            max-width: 800px;
+            margin: 60px auto;
+            text-align: left;
+        }
+        .tool-card h3 {
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .tool-output {
+            background-color: #f8f8f8;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            color: #0077B6; /* A common color for code snippets */
+            font-size: 0.95em;
+            white-space: pre-wrap;
+            word-break: break-all;
+            position: relative;
+        }
+        .tool-output button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 15px;
+            font-size: 0.9em;
+            background-color: var(--primary);
+            color: var(--light-text);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tool-output button:hover {
+            background-color: var(--accent);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: var(--background);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            text-align: left;
+        }
+
+        footer {
+            background-color: var(--dark-text);
+            color: var(--light-text);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+        }
+        footer a:hover {
+            color: var(--accent);
+        }
+        footer .footer-links {
+            margin-top: 15px;
+        }
+        footer .footer-links a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3em; }
+            .hero p { font-size: 1.2em; }
+            .section-title { font-size: 2.2em; }
+            .section-subtitle { font-size: 1.1em; }
+            .nav-list { display: none; } /* Simple mobile nav hiding for this example */
+            .logo { text-align: center; width: 100%; }
+            section { padding: var(--padding-mobile) 0; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Content goes here -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#hero" class="logo">Google Sheets Guide</a>
+                <ul class="nav-list">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#formula-generator">Tools</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>Master Google Sheets, Effortlessly.</h1>
+                <p>Unlock powerful insights and streamline your data with our comprehensive guides, interactive tools, and expert tutorials.</p>
+                <a href="#features" class="button">Start Your Journey</a>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title">Your Path to Spreadsheet Mastery</h2>
+                <p class="section-subtitle">Discover a wealth of resources designed to transform you into a Google Sheets expert, from basic formulas to advanced automation.</p>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="icon">💡</span>
+                        <h3>In-Depth Tutorials</h3>
+                        <p>Step-by-step guides for every function, feature, and best practice in Google Sheets. Learn at your own pace with clear, concise explanations.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">🛠️</span>
+                        <h3>Interactive Tools</h3>
+                        <p>Generate complex formulas and master regular expressions with our intuitive online tools. Say goodbye to manual trial-and-error.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">📈</span>
+                        <h3>Ready-to-Use Templates</h3>
+                        <p>Download professional templates for budgeting, project management, data analysis, and more. Customize them to fit your exact needs.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">✅</span>
+                        <h3>Problem-Solving Strategies</h3>
+                        <p>Get practical solutions to common spreadsheet challenges. Learn how to debug, optimize, and build robust sheets.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">🚀</span>
+                        <h3>Productivity Hacks</h3>
+                        <p>Boost your efficiency with advanced tips, keyboard shortcuts, and automation techniques using Google Apps Script.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">🌐</span>
+                        <h3>Community & Support</h3>
+                        <p>Join our growing community to ask questions, share knowledge, and get help from fellow Google Sheets enthusiasts and experts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="formula-generator">
+            <div class="container">
+                <h2 class="section-title">Google Sheets Formula Generator</h2>
+                <p class="section-subtitle">Struggling with complex formulas? Our intelligent generator crafts the perfect Google Sheets formula based on your needs.</p>
+                <div class="tool-card">
+                    <h3>Generate Your Perfect Formula</h3>
+                    <div class="form-group">
+                        <label for="formulaType">Formula Type:</label>
+                        <select id="formulaType">
+                            <option value="sumif">SUMIF (Conditional Sum)</option>
+                            <option value="vlookup">VLOOKUP (Lookup Value)</option>
+                            <option value="indexmatch">INDEX MATCH (Advanced Lookup)</option>
+                            <option value="concatenate">CONCATENATE (Join Text)</option>
+                            <option value="split">SPLIT (Divide Text)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputData">Describe your data and goal (e.g., "sum column B where column A is 'Sales'"):</label>
+                        <textarea id="inputData" rows="4" placeholder="e.g., Sum values in 'Amount' column if 'Category' column is 'Groceries'"></textarea>
+                    </div>
+                    <button onclick="generateSheetsFormula()">Generate Formula</button>
+                    <div id="sheetsFormulaOutput" class="tool-output" style="display: none;">
+                        <code></code>
+                        <button onclick="copyToClipboard('sheetsFormulaOutput')">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="regex-helper">
+            <div class="container">
+                <h2 class="section-title">Regex Formula Helper</h2>
+                <p class="section-subtitle">Easily build and test Regular Expressions for Google Sheets (REGEXMATCH, REGEXEXTRACT, REGEXREPLACE) with our interactive helper.</p>
+                <div class="tool-card">
+                    <h3>Craft Your Regex Pattern</h3>
+                    <div class="form-group">
+                        <label for="testString">Test String:</label>
+                        <input type="text" id="testString" placeholder="e.g., Your order #XYZ123 has shipped.">
+                    </div>
+                    <div class="form-group">
+                        <label for="regexPattern">Regex Pattern:</label>
+                        <input type="text" id="regexPattern" placeholder="e.g., #([A-Z]{3}\d{3})">
+                    </div>
+                    <button onclick="generateRegexFormula()">Test Regex</button>
+                    <div id="regexOutput" class="tool-output" style="display: none;">
+                        <code></code>
+                        <button onclick="copyToClipboard('regexOutput')">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Google Sheets Guide</h2>
+                <p class="section-subtitle">Our mission is to empower everyone, from beginners to advanced users, to harness the full power of Google Sheets.</p>
+                <p>We believe that Google Sheets is an incredibly versatile and accessible tool for data management, analysis, and automation. However, its vast array of functions and features can sometimes be daunting. That's why we created the Google Sheets Guide – a one-stop resource to simplify your learning journey.</p>
+                <p>From foundational concepts to intricate formulas, from practical tips to innovative automation scripts, we cover it all. Our interactive tools are designed to remove the guesswork, allowing you to quickly generate and understand the formulas you need. Join us in transforming your spreadsheet experience.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have a question, suggestion, or just want to say hello? We'd love to hear from you!</p>
+                <div class="form-container">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Google Sheets Guide. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#about">About Us</a> | <a href="#contact">Contact</a> | <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function generateSheetsFormula() {
+            const formulaType = document.getElementById('formulaType').value;
+            const inputData = document.getElementById('inputData').value;
+            const outputElement = document.getElementById('sheetsFormulaOutput');
+            const codeElement = outputElement.querySelector('code');
+            let formula = '';
+
+            // Simple mock logic for demonstration
+            switch (formulaType) {
+                case 'sumif':
+                    formula = `=SUMIF(A:A, "Category Name", B:B)`;
+                    if (inputData.toLowerCase().includes("category") && inputData.toLowerCase().includes("amount")) {
+                        formula = `=SUMIF(C:C, "Your_Category", D:D)  // Adjust C:C for category, D:D for amount`;
+                    } else if (inputData) {
+                         formula = `=SUMIF(Range_Criteria, "Your_Criteria_Value", Range_Sum)`;
+                    }
+                    break;
+                case 'vlookup':
+                    formula = `=VLOOKUP(Lookup_Value, Data_Range, Column_Index, FALSE)`;
+                    if (inputData.toLowerCase().includes("product id") && inputData.toLowerCase().includes("price")) {
+                        formula = `=VLOOKUP(A2, Products!A:B, 2, FALSE) // A2 is product ID, Products!A:B is product list, 2 is price column`;
+                    }
+                    break;
+                case 'indexmatch':
+                    formula = `=INDEX(Return_Range, MATCH(Lookup_Value, Lookup_Range, 0))`;
+                    if (inputData.toLowerCase().includes("employee name") && inputData.toLowerCase().includes("salary")) {
+                        formula = `=INDEX(Salaries!B:B, MATCH(A2, Salaries!A:A, 0)) // A2 is employee name, Salaries!A:A is names, Salaries!B:B is salaries`;
+                    }
+                    break;
+                case 'concatenate':
+                    formula = `=CONCATENATE(A2, " ", B2)  // Joins cell A2 and B2 with a space`;
+                    if (inputData.toLowerCase().includes("first name") && inputData.toLowerCase().includes("last name")) {
+                        formula = `=CONCATENATE(A2, " ", B2) // A2 = First Name, B2 = Last Name`;
+                    }
+                    break;
+                case 'split':
+                    formula = `=SPLIT(A2, " ") // Splits text in A2 by space`;
+                    if (inputData.toLowerCase().includes("full name")) {
+                        formula = `=SPLIT(A2, " ") // A2 = Full Name, splits into first and last`;
+                    }
+                    break;
+                default:
+                    formula = 'Please select a formula type and describe your goal.';
+            }
+
+            codeElement.textContent = formula;
+            outputElement.style.display = 'block';
+        }
+
+        function generateRegexFormula() {
+            const testString = document.getElementById('testString').value;
+            const regexPattern = document.getElementById('regexPattern').value;
+            const outputElement = document.getElementById('regexOutput');
+            const codeElement = outputElement.querySelector('code');
+            let resultText = '';
+
+            if (!regexPattern) {
+                resultText = "Please enter a Regex Pattern.";
+            } else if (!testString) {
+                resultText = "Please enter a Test String.";
+            } else {
+                try {
+                    const regex = new RegExp(regexPattern, 'g');
+                    const match = testString.match(regex);
+                    const extract = Array.from(testString.matchAll(regex), m => m[1] || m[0]); // Get capture groups or full match
+                    const replace = testString.replace(regex, 'REPLACED');
+
+                    resultText = `REGEXMATCH: ${!!match ? 'TRUE' : 'FALSE'}\n`;
+                    resultText += `REGEXEXTRACT: ${extract.length > 0 ? extract.join(', ') : 'No extract'}\n`;
+                    resultText += `REGEXREPLACE (example): ${replace}`;
+
+                } catch (e) {
+                    resultText = `Invalid Regex Pattern: ${e.message}`;
+                }
+            }
+            
+            codeElement.textContent = resultText;
+            outputElement.style.display = 'block';
+        }
+
+        function copyToClipboard(elementId) {
+            const outputElement = document.getElementById(elementId);
+            const textToCopy = outputElement.querySelector('code').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const button = outputElement.querySelector('button');
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy the text. Please try again or copy manually.');
+            });
+        }
+    </script>
 </body>
 </html>
